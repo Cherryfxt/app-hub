@@ -1,0 +1,62 @@
+[
+  {
+    "id": "english",
+    "name": "出发吧！",
+    "subtitle": "我的英语赛季",
+    "category": "学习积累",
+    "kind": "english",
+    "url": "https://cherryfxt.github.io/chufaba-english-pages/",
+    "repo": "https://github.com/Cherryfxt/chufaba-english-pages",
+    "description": "开启英语学习赛季，在一站站挑战中积累和练习。",
+    "tags": [
+      "英语",
+      "赛季挑战"
+    ],
+    "icon": "assets/english-icon.png"
+  },
+  {
+    "id": "recitation",
+    "name": "背诵练习室",
+    "subtitle": "一题一题，慢慢记牢",
+    "category": "学习积累",
+    "kind": "recitation",
+    "url": "https://cherryfxt.github.io/recitation-room/",
+    "repo": "https://github.com/Cherryfxt/recitation-room",
+    "description": "道法与历史逐题背诵，用首字提示、答案核对和薄弱题复习巩固记忆。",
+    "tags": [
+      "道法 / 历史",
+      "记忆练习"
+    ],
+    "icon": "assets/recitation-icon.svg"
+  },
+  {
+    "id": "story",
+    "name": "三词成故事",
+    "subtitle": "让想象力接上话",
+    "category": "想象表达",
+    "kind": "story",
+    "url": "https://cherryfxt.github.io/three-word-story/",
+    "repo": "https://github.com/Cherryfxt/three-word-story",
+    "description": "抽出三个意想不到的词，准备 5 秒，用 60 秒讲一个有头有尾的故事。",
+    "tags": [
+      "三个词",
+      "口头表达"
+    ],
+    "icon": "assets/story-icon.svg"
+  },
+  {
+    "id": "idiom",
+    "name": "成语画猜",
+    "subtitle": "你来画，我来猜",
+    "category": "双人互动",
+    "kind": "idiom",
+    "url": "https://cherryfxt.github.io/idiom-draw-guess/",
+    "repo": "https://github.com/Cherryfxt/idiom-draw-guess",
+    "description": "从 500 个成语中随机出题，轮流画图与猜词，在互动中认识成语。",
+    "tags": [
+      "500 个成语",
+      "双人游戏"
+    ],
+    "icon": "assets/idiom-icon.png"
+  }
+]

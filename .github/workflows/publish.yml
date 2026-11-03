@@ -1,0 +1,39 @@
+name: Discover apps and publish hub
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: '17 * * * *'
+  workflow_dispatch:
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: app-hub-pages
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - name: Set up Pages
+        uses: actions/configure-pages@v5
+      - name: Validate discovery rules
+        run: python3 -m unittest discover -s tests -v
+      - name: Discover public deployed applications
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 scripts/discover_apps.py --owner Cherryfxt --output _site
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site
+      - name: Publish application hub
+        id: deployment
+        uses: actions/deploy-pages@v4
