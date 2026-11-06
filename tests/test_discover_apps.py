@@ -32,6 +32,17 @@ class FakeClient:
 
 
 class DiscoveryTests(unittest.TestCase):
+    def test_placeholders_survive_discovery_and_follow_live_apps(self):
+        idea = {'id': 'idea-guess', 'status': 'placeholder', 'cover': 'assets/idea-guess.jpg'}
+        item = repo('new-app')
+        url = d.pages_url(item, 'Cherryfxt')
+        client = FakeClient([item], {url: (b'<title>New app</title>', 'text/html', url)})
+        with tempfile.TemporaryDirectory() as td:
+            apps, skipped = d.discover(client, 'Cherryfxt', [idea], Path(td))
+        self.assertEqual(apps[-1], idea)
+        self.assertEqual(apps[0]['url'], url)
+        self.assertNotIn('url', apps[-1])
+
     def test_new_app_and_known_style_preserved(self):
         known = {'id': 'existing', 'name': '人工名称', 'kind': 'english', 'icon': 'assets/original.png', 'repo': 'https://github.com/Cherryfxt/known'}
         repos = [repo('known'), repo('new-app')]

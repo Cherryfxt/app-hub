@@ -173,7 +173,8 @@ def icon_for(client, info, page_url, slug, output):
 
 def discover(client, owner, configured, output, self_repo='app-hub'):
     repos = public_repositories(client, owner)  # Any API failure aborts publication.
-    configured_map = {repo_name(a): a for a in configured}
+    placeholders = [dict(a) for a in configured if a.get('status') == 'placeholder']
+    configured = [a for a in configured if a.get('status') != 'placeholder']
     listed = {r['full_name'].lower(): r for r in repos}
     # Keep manually designed cards on transient Pages failures, while never exposing now-private repos.
     apps = [dict(a) for a in configured if repo_name(a) in listed]
@@ -206,7 +207,7 @@ def discover(client, owner, configured, output, self_repo='app-hub'):
         description = info.description or repo.get('description') or '打开应用，开始体验。'
         theme = info.theme if re.fullmatch(r'#[0-9a-fA-F]{3}(?:[0-9a-fA-F]{3})?', info.theme) else '#536b59'
         apps.append({'id': 'github-' + str(repo['id']), 'name': title, 'subtitle': 'GitHub Pages 应用', 'category': '其他应用', 'kind': 'discovered', 'url': final_url, 'repo': 'https://github.com/' + repo['full_name'], 'description': str(description)[:240], 'tags': ['应用'], 'icon': icon_for(client, info, final_url, slug, output), 'themeColor': theme})
-    return apps, skipped
+    return apps + placeholders, skipped
 
 
 def build(owner='Cherryfxt', output=None, client=None, root=ROOT):

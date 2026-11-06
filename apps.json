@@ -58,5 +58,61 @@
       "双人游戏"
     ],
     "icon": "assets/idiom-icon-display.png"
+  },
+  {
+    "id": "idea-guess",
+    "name": "猜猜它在哪",
+    "subtitle": "从一个线索，认识世界",
+    "category": "学习积累",
+    "kind": "idea",
+    "status": "placeholder",
+    "description": "猜国家、找大洲，在地图与特色场景中探索世界。",
+    "tags": [
+      "地理探索",
+      "世界见闻"
+    ],
+    "cover": "assets/idea-guess.jpg"
+  },
+  {
+    "id": "idea-people",
+    "name": "名人墙",
+    "subtitle": "每天认识一位有故事的人",
+    "category": "学习积累",
+    "kind": "idea",
+    "status": "placeholder",
+    "description": "认识古今中外的真实人物，了解他们的人生故事与事迹。",
+    "tags": [
+      "人物故事",
+      "每日积累"
+    ],
+    "cover": "assets/idea-people.jpg"
+  },
+  {
+    "id": "idea-birthday",
+    "name": "我的生日搭子",
+    "subtitle": "同一天生日，奇妙的相遇",
+    "category": "其他应用",
+    "kind": "idea",
+    "status": "placeholder",
+    "description": "发现与自己同月同日生日的伙伴，让一个日期连接更多故事。",
+    "tags": [
+      "同日生日",
+      "惊喜发现"
+    ],
+    "cover": "assets/idea-birthday.jpg"
+  },
+  {
+    "id": "idea-xiangye",
+    "name": "向野",
+    "subtitle": "风景归你，线路归我",
+    "category": "其他应用",
+    "kind": "idea",
+    "status": "placeholder",
+    "description": "规划自驾线路，把时间留给沿途风景，也给自己一点放松的空间。",
+    "tags": [
+      "自驾旅行",
+      "线路规划"
+    ],
+    "cover": "assets/idea-xiangye.jpg"
   }
 ]
